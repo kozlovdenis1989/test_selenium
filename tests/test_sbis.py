@@ -111,4 +111,4 @@ def test_3(browser):
     logger.info(f'Размер скачаного файла {filesize_mb}')
     assert file_size == filesize_mb
 
-    logger.info('Тест 3 завершен успешно')
+    logger.info('"Тест 3" завершен успешно')

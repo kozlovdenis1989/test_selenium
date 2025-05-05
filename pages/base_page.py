@@ -57,6 +57,4 @@ class BasePage:
         logger.debug("Скролл к элементу на странице")
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def wait_upload_text(self, new_text, locator, timeout=10):
-        WebDriverWait(self.driver, 10).until(lambda d: new_text == self.find_visibility(locator).get_attribute('title'))
-        return True
+    
