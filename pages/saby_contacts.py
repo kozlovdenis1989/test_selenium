@@ -7,10 +7,9 @@ import time
 class SabyContactsPage(BasePage):
     TENSOR_BANNER = (By.CSS_SELECTOR, ".sbisru-Contacts__logo-tensor.mb-12")
     MY_REGION = (By.CSS_SELECTOR, ".sbis_ru-Region-Chooser__text.sbis_ru-link")
-    SELECT_REGION = (By.XPATH, "/html/body/div[1]/div/div/div/div[1]/div[2]/div/div/div/div/div[2]/div/ul/li[43]/span")
+    SELECT_REGION = (By.XPATH, "//span[@class='sbis_ru-link' and @title='Камчатский край']")
     NUM_REGION = (By.XPATH, "//span[@class='controls-DecoratorHighlight' and contains(., 'Камчатский край') ]")
     PARTNERS = (By.CSS_SELECTOR, ".sbisru-Contacts-List__name.sbisru-Contacts-List--ellipsis.sbisru-Contacts__text--md.pb-4.pb-xm-12.pr-xm-32") 
-    SELECT = (By.XPATH, "//span[@class='sbis_ru-link' and @title='Камчатский край']")
     REGION_PANEL = (By.CSS_SELECTOR, ".sbis_ru-Region-Panel.sbis_ru-Region-Panel-l")
 
     def click_tensor_banner(self):
@@ -35,7 +34,7 @@ class SabyContactsPage(BasePage):
         self.skip_load_element(self.PREALOADER)
         logger.info("Клик выбора региона")
         self.find_clicable(self.MY_REGION).click()
-        select_region = self.find_clicable(self.SELECT)
+        select_region = self.find_clicable(self.SELECT_REGION)
         region_name = select_region.get_attribute('title')
         region_num = self.find_visibility(self.NUM_REGION).text[:2]
    
