@@ -21,7 +21,7 @@ selenium_test/
 ├── utils/  
 │   ├── __init__.py  
 │   ├── logger.py  
-│   └── logs/  
+│── logs/  
 │       └── selenium_tests.log  
 ├── conftest.py        
 ├── requirements.txt    

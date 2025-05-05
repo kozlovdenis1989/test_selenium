@@ -1,8 +1,9 @@
 import logging
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-LOG_DIR = os.path.join(BASE_DIR, "logs")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
+PARENT_DIR = os.path.dirname(BASE_DIR) 
+LOG_DIR = os.path.join(PARENT_DIR, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)
 LOG_PATH = os.path.join(LOG_DIR, "selenium_tests.log")
 
